@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+  
+  
+
+  <title>CodePen - Single Blog Page Bootstrap - 5th</title>
+
+    <link rel="canonical" href="https://codepen.io/componentity/pen/ZEWvyLg">
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background-color: #0a0a0af1;
+}
+
+.code-container {
+
+  background-color: #ada07e;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
+
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+
+</head>
+
+<body translate="no">
+  <div class = "video-container">
+  <div style="max-width: 720px;" class="container my-5">
+    <div class="mx-auto text-secondary">
+      <video autoplay muted loop id="video-background">
+        <source src="assets/videos/short.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div>
+          <small>
+            <a href="#" class="text-primary" >Technology</a>, <a href="#" class="text-primary">Science</a>
+        </small>
+      </div>
+      <h1 class="font-weight-bold" style="color: #b09f74;">Storing digital data in DNA- Part1</h1>
+      <p class="my-2" style="line-height: 2;color: #9f8f68;">This blog mainly focues on giving the basic idea on 
+        how DNA can be used to store digital data. Also the complications behind it.</p>
+      
+      <div class="my-3 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+        <img src="assets/darshan.jpg" style="width: 50px;"/>
+        <small class="ml-2">
+          <a href="#" class="text-primary d-block">Darshan S</a>
+          <span>Oct 2, 2023</span>
+        </small>
+      </div>
+        <div class="text-primary">
+          <a href="https://www.linkedin.com/in/darshansenthilkumar/" class="w-6 mx-1">
+              <svg fill="currentColor" width="30px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                <path id="Shape" d="M7.3,0.9c1.5,-0.6 3.1,-0.9 4.7,-0.9c1.6,0 3.2,0.3 4.7,0.9c1.5,0.6 2.8,1.5
+                    3.8,2.6c1,1.1 1.9,2.3 2.6,3.8c0.7,1.5 0.9,3 0.9,4.7c0,1.7 -0.3,3.2
+                    -0.9,4.7c-0.6,1.5 -1.5,2.8 -2.6,3.8c-1.1,1 -2.3,1.9 -3.8,2.6c-1.5,0.7
+                    -3.1,0.9 -4.7,0.9c-1.6,0 -3.2,-0.3 -4.7,-0.9c-1.5,-0.6 -2.8,-1.5
+                    -3.8,-2.6c-1,-1.1 -1.9,-2.3 -2.6,-3.8c-0.7,-1.5 -0.9,-3.1 -0.9,-4.7c0,-1.6
+                    0.3,-3.2 0.9,-4.7c0.6,-1.5 1.5,-2.8 2.6,-3.8c1.1,-1 2.3,-1.9
+                    3.8,-2.6Zm-0.3,7.1c0.6,0 1.1,-0.2 1.5,-0.5c0.4,-0.3 0.5,-0.8 0.5,-1.3c0,-0.5
+                    -0.2,-0.9 -0.6,-1.2c-0.4,-0.3 -0.8,-0.5 -1.4,-0.5c-0.6,0 -1.1,0.2
+                    -1.4,0.5c-0.3,0.3 -0.6,0.7 -0.6,1.2c0,0.5 0.2,0.9 0.5,1.3c0.3,0.4 0.9,0.5
+                    1.5,0.5Zm1.5,10l0,-8.5l-3,0l0,8.5l3,0Zm11,0l0,-4.5c0,-1.4 -0.3,-2.5
+                    -0.9,-3.3c-0.6,-0.8 -1.5,-1.2 -2.6,-1.2c-0.6,0 -1.1,0.2 -1.5,0.5c-0.4,0.3
+                    -0.8,0.8 -0.9,1.3l-0.1,-1.3l-3,0l0.1,2l0,6.5l3,0l0,-4.5c0,-0.6 0.1,-1.1
+                    0.4,-1.5c0.3,-0.4 0.6,-0.5 1.1,-0.5c0.5,0 0.9,0.2 1.1,0.5c0.2,0.3 0.4,0.8
+                    0.4,1.5l0,4.5l2.9,0Z"></path>
+              </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div style="max-width: 700px; top: -80px;" class="mx-auto text-secondary">
+      <h4 class="font-weight-bold" style="color: #b09f74;">What is DNA?</h4>
+      <p class="my-2" style="line-height: 2;color: #9f8f68;">DNA, or deoxyribonucleic acid, is the hereditary material in humans and almost all other organisms. 
+        Nearly every cell in a person’s body has the same DNA. 
+        Most DNA is located in the cell nucleus (where it is called nuclear DNA), 
+        but a small amount of DNA can also be found in the mitochondria 
+        (where it is called mitochondrial DNA or mtDNA). 
+        Mitochondria are structures within cells that convert the energy from food into a form that cells can use.</p>
+      <br>
+      <br>
+
+      <h4 class="font-weight-bold" style="color: #b09f74;">Components that make up DNA</h4>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">Series of smaller molecule called nucleotides, each nucleotide have three different 
+      building block,
+      <ul style="color:#9f8f68;">
+        <li>Nitrogenous base</li>
+        <li>Deoxyribose</li>
+        <li>Phosphate</li>
+      </ul>
+      <div class="container" style="max-width: 700px; height: 400px; background-color: white;">
+        <img src="assets/nucleotide.png" style="max-width: 100%; height: auto;">
+      </div>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">There are 4 different types of nucleotides, 
+        which helps in building the entire DNA molecule,</p>
+      <ul style="color: #9f8f68;">
+        <li>A - Adenine</li>
+        <li>T - Thymine</li>
+        <li>G - Guanine</li>
+        <li>C - Cytosine</li>
+      </ul>
+
+    </p>
+      
+      <br>    
+      
+      <blockquote class="text p-3 font-italic" style="border-left: 4px solid #9f8f68; line-height: 2;">Well some of you might be wondering that why we are focusing on biology of DNA, and why to learn about the types of nucleotides, well for all these questions you will get your answer in the following paragraphs.</blockquote>
+      
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">we need to learn on how to synthesize DNA artifically, also to retrieve the stored data,
+        we will see them in brief after we learn on how to convert our digital data into the 4 available nucleotides(A,T,G,C). 
+      </p>
+
+
+      <br>
+      <br>
+      <h4 class="font-weight-bold" style="color: #b09f74;">How to convert digital data and store in DNA?</h4>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">There are more than 6 possible methods which can be used to convert the digital data into nucleotides, they are 
+      </p>
+
+      <ul style="color: #9f8f68;">
+        <li><a href ="#Binary-Base">Binary-Base encoding</a></li>
+        <li><a href ="#huffman">Huffman Coding</a></li>
+        <li>Hamming codes and error correction</li>
+        <li>Fountain Codes</li>
+        <li>DNA alphabet expansion</li>
+      </ul>
+
+      <h6 class="font-weight-bold" style="color: #b09f74;" id = "Binary-Base">1. Binary-Base encoding:</h6>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">Binary-to-base encoding is a process used in bioinformatics to convert digital data, typically represented as binary sequences (0s and 1s), 
+        into sequences of nucleotides (A, T, G, and C) that can be used to represent genetic information, such as DNA or RNA</p>
+        <ul style="color:#9f8f68;">
+          <li>00 maps to A</li>
+          <li>01 maps to T</li>
+          <li>10 maps to G</li>
+          <li>11 maps to C</li>
+        </ul>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">For example, let's say you want to encode the binary sequence "00101110" using the mapping provided earlier: So, the binary sequence "00101110" would be encoded as the nucleotide sequence "A(00)G(10)C(11)G(10)." We strat calculating this from right to left. Like how we do in binary to decimal conversion. </p>
+
+      <h6 class="font-weight-bold" style="color: #b09f74;" id="huffman">2. Huffman Coding:</h6>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">
+        <ul style="color: #9f8f68;">
+          <li>Huffman coding is a variable-length prefix coding algorithm commonly used in data compression to represent data efficiently. 
+        It assigns shorter codes to more frequent symbols and longer codes to less frequent symbols, which results in a more compact representation of the data.
+          </li>
+          <li>Over the last two decades, the DNA sequence handling and storing problem has been considered as a big problem for many bioinformatics 
+            researchers because genomic databases are increasing drastically. To handle this problem, computational biology plays an important role, 
+            such as searching for homology, genome formulation, predicting for a new protein sequence, hereditary control networks, 
+            and new creative genomics structure. Available resources are not sufficient for storing and handling large DNA sequences. There are various tools developed by using different algorithms and approach. We have proposed an algorithm to improve the compression ratio which uses the concept of RLE (run length encoding) with a Modified HuffBit algorithm. The results obtained by the proposed method are found to be 20% more accurate when compared to existing algorithms.</li>
+        </ul>
+      </p>
+
+      <br>
+      <h6 class="font-weight-bold" style="color: #b09f74;">Detailed process involved in creating the desired DNA, storing and retrieving it.</h6>
+      <ul style="color:#9f8f68;">
+        <li>Convert Data to Binary</li>
+        <li>Map Binary to DNA Bases</li>
+        <li>Create DNA Strands</li>
+        <li>Add Overhead and Error Correction</li>
+        <li>Synthesize DNA</li>
+        <li>Store and Preserve</li>
+        <li>Retrieve and Decode</li>
+      </ul>
+
+      <blockquote class="text p-3 font-italic" style="border-left: 4px solid #9f8f68; line-height: 2;">We covered till mapping binary to DNA bases, since this is a technical blog we will not be covering how the DNA strands are made and 
+      how we can retrieve it back,but we will still look about how the DNA is stored and preserced, we will see the leftout topics in my next blog.</blockquote>
+      
+      <br> 
+      <h6 class="font-weight-bold" style="color: #b09f74;" id="huffman">Why use DNA?</h6>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">Have you ever pondered the choice of DNA amidst the plethora of available options in modern science and technology? 
+        It's a question that encourages contemplation and sparks curiosity about the rationale behind selecting DNA as a fundamental building block in various fields.
+      </p>
+      <ul style="color:#9f8f68;">
+        <li>Volume - The amount of data which a DNA molecule can store is quite humungous, that is because we know that the molecules are very very small and very store a 
+          lot of data in a gram of DNA as compared to other storage devices, It is estimated that 1 gram of DNA can hold up to ~215 petabytes (1 petabyte = 1 million gigabytes) of information.
+           Which cannot be achieved in any other modern storage devices.
+        </li>
+        <li>Longevity - Once if we store the information inside the DNA then it can store data within it atleast for more than hundreds of years and even this cannot be achieved in modern day storage devices.</li>
+        <li>Environmental Impact - Unlike other devices we are not going to pollute the environment while the preparation of the DNA molecule or else while discarding the unused storage devices it pollutes the environment if not recycled.
+
+        </li>
+        <li>Information Security - DNA storage offers unique advantages in terms of information security due to its density, biological complexity, and durability. However, it's not immune to security risks, and 
+          access control, physical security, and privacy concerns must be addressed to ensure the protection of the data stored within DNA molecules.</li>
+      </ul>
+
+      <div class="container" style="max-width: 700px; height: 400px; background-color: white; display: flex; justify-content: center; align-items: center;">
+        <img src="assets/process.png" style="max-width: 100%; height: auto;">
+      </div>
+
+      <p class="my-2" style="line-height: 1; color: #9f8f68;">This image gives us a rough idea on how to store data using DNA and what problems we 
+        face while storing data. 
+      </p>
+      <br>
+
+
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">Try converting a sample binary (00110101) data into the DNA bases,
+      </p>
+      <form>
+        <label for="binaryInput">Enter Binary Data:</label>
+        <input type="text" id="binaryInput" placeholder="Enter binary data">
+        <button type="button" id="convertButton">Convert to DNA</button>
+      </form>
+      <p>DNA Sequence:</p>
+    <p id="dnaOutput"></p>
+
+      
+    <div class="code-container">
+      <button class="copy-button" id="copyButton">Copy Code</button>
+      <pre>
+def binary_to_dna(binary_string):
+  dna_sequence = ""
+  binary_length = len(binary_string)
+
+  # Ensure the binary string length is a multiple of 2
+  if binary_length % 2 != 0:
+      binary_string = "0" + binary_string  # Pad with a leading 0 if needed
+
+  # Define a mapping from binary to DNA bases
+  binary_to_dna_mapping = {
+      "00": "A",
+      "01": "C",
+      "10": "G",
+      "11": "T"
+  }
+
+  # Iterate through the binary string in chunks of 2
+  for i in range(0, binary_length, 2):
+      chunk = binary_string[i:i + 2]
+      dna_base = binary_to_dna_mapping[chunk]
+      dna_sequence += dna_base
+
+  return dna_sequence
+
+# Example usage
+binary_data = "1101101001110010"  # Replace with your binary data
+dna_sequence = binary_to_dna(binary_data)
+print("Binary:   ", binary_data)
+print("DNA Seq.: ", dna_sequence)
+      </pre>
+  </div>
+  
+  <p class="my-2" style="line-height: 2; color: #9f8f68;">Code we used to convert the binray value to respected base values.
+      
+      <br>
+      
+      <div class="my-3">
+        <small>
+            <a href="#" class="text-primary">#technology</a>, <a href="#" class="text-primary">#storage</a>, <a href="#" class="text-primary">#science</a>, <a href="#" class="text-primary">#biology</a>, <a href="#" class="text-primary">#DNA</a>
+        </small>
+      </div>
+      
+    </div>
+  </div>
+  <footer class="mt-5 text-center" style="background-color: #333; color: #fff; padding: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="mb-4">Useful Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/your-username" class="text-primary">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/darshansenthilkumar/">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="mb-4">Contact</h4>
+          <p class="mb-2">Email: govoyager2021@gmail.com</p>
+          <p class="mb-2">Phone: +97 8072539357</p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="mb-4">Follow Me</h4>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fa-brands fa-facebook"></i>
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</div>
+
+<script>
+  function binaryToDNA(binaryString) {
+            // Ensure the binary string length is a multiple of 2
+            if (binaryString.length % 2 !== 0) {
+                binaryString = "0" + binaryString;  // Pad with a leading 0 if needed
+            }
+
+            // Define a mapping from binary to DNA bases
+            const binaryToDNAMapping = {
+                "00": "A",
+                "01": "C",
+                "10": "G",
+                "11": "T"
+            };
+
+            let dnaSequence = "";
+
+            // Iterate through the binary string in chunks of 2
+            for (let i = 0; i < binaryString.length; i += 2) {
+                const chunk = binaryString.slice(i, i + 2);
+                const dnaBase = binaryToDNAMapping[chunk];
+                dnaSequence += dnaBase;
+            }
+
+            return dnaSequence;
+        }
+
+
+  document.getElementById("convertButton").addEventListener("click", function () {
+      const binaryInput = document.getElementById("binaryInput").value;
+      const dnaOutput = document.getElementById("dnaOutput");
+
+      // Call the binaryToDNA function and display the result
+      const dnaSequence = binaryToDNA(binaryInput);
+      dnaOutput.textContent = dnaSequence;
+  });
+
+
+  function copyCodeToClipboard() {
+            const codeContainer = document.querySelector('.code-container pre');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeContainer.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code copied to clipboard!');
+        }
+
+        // Attach click event listener to the copy button
+        document.getElementById('copyButton').addEventListener('click', copyCodeToClipboard);
+  
+</script>
+
+</body>
+
+</html>

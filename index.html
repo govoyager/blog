@@ -1,155 +1,730 @@
+
 <!DOCTYPE html>
-<html>
-<title>WPT Blog</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Trophy (Jekyll theme)</title>
+
+    <link rel="canonical" href="https://codepen.io/thomasvaeth/pen/vXNmwX">
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inconsolata|Space+Mono:700'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css'>
+  
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+/**
+ * Base Variables
+ */
+/**
+ * Base Settings/Overwrite Normalize
+ */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inconsolata", monospace;
+  font-feature-settings: "liga" 0;
+  font-size: 100%;
+  line-height: 1.6;
+}
+@media (min-width: 20em) {
+  body {
+    font-size: 102.5%;
+  }
+}
+@media (min-width: 30em) {
+  body {
+    font-size: 105%;
+  }
+}
+@media (min-width: 54em) {
+  body {
+    font-size: 107.5%;
+  }
+}
+@media (min-width: 64em) {
+  body {
+    font-size: 110%;
+  }
+}
+@media (min-width: 76.5em) {
+  body {
+    font-size: 115%;
+  }
+}
+@media (min-width: 114em) {
+  body {
+    font-size: 125%;
+  }
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: "Space Mono", monospace;
+}
+
+@media (min-width: 54em) {
+  h1 {
+    font-size: 3em;
+  }
+}
+@media (min-width: 76.5em) {
+  h1 {
+    font-size: 3.5em;
+  }
+}
+
+p {
+  margin: 0 0 0.75em;
+}
+
+a {
+  color: #0a0a0a;
+  text-decoration: none;
+  transition: color 0.4s ease-in-out;
+}
+a:hover, a:active, a:focus {
+  color: #9f8f68;
+}
+
+figure {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/**
+ * Text Selection
+ */
+::-moz-selection {
+  color: #fff;
+  background-color: #9f8f68;
+  text-shadow: none;
+}
+::selection {
+  color: #fff;
+  background-color: #9f8f68;
+  text-shadow: none;
+}
+
+/**
+ * Underline Slide from left and back
+ */
+/**
+ * Button Slide
+ * Need to still add hover state in parent element
+ * box-shadow: inset 175px 0 0 0 $color-alpha;
+ * color: $color-white;
+ */
+/**
+ * Flex Grid
+ */
+/**
+ * Box Shadow
+ */
+/**
+ * Letter Spacing
+ */
+.footer__archive, .card__more, .preview__more, .previews__container span, .tabs {
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/**
+ * Black Color Overlay
+ */
+.card__img:after, .previews > *:first-child:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.2);
+  transition: background-color 0.4s ease-in-out;
+}
+
+/**
+ * Body
+ */
+body {
+  background-color: #f8f9f9;
+}
+
+/**
+ * Sections
+ */
+section {
+  position: relative;
+}
+
+.section-padding {
+  padding: 4em 0;
+}
+.section-padding--lg {
+  padding: 6em 0;
+}
+.section-padding--sm {
+  padding: 2em 0;
+}
+
+/**
+ * Class Container (BEM)
+ */
+[class*=__container] {
+  position: relative;
+  z-index: 1;
+}
+
+/**
+ * Blog page
+ */
+@media (max-width: 54em) {
+  .previews {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.previews > *:first-child {
+  position: relative;
+  height: 30em;
+  background-color: #0a0a0a;
+}
+@media (min-width: 54em) {
+  .previews > *:first-child {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 45%;
+  }
+}
+.previews > *:last-child {
+  min-height: 100vh;
+}
+@media (min-width: 54em) {
+  .previews > *:last-child {
+    margin-left: 45%;
+  }
+}
+
+/**
+ * Tabs
+ * On the Blog page for posts and categories
+ */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+@media (min-width: 54em) {
+  .tabs {
+    padding-left: 8em;
+    padding-right: 8em;
+  }
+}
+@media (min-width: 114em) {
+  .tabs {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+}
+.tabs__item {
+  cursor: pointer;
+}
+.tabs__item:not(.active) {
+  position: relative;
+  color: #0a0a0a;
+}
+.tabs__item:not(.active):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 3px solid #9f8f68;
+  transition: width 0.4s ease-in-out;
+}
+.tabs__item:not(.active):hover:after {
+  width: 100%;
+}
+.tabs__item.active {
+  border-bottom: 3px solid #9f8f68;
+}
+
+.tab.active {
+  will-change: opacity;
+  -webkit-animation: fade-in 1s both;
+          animation: fade-in 1s both;
+}
+
+/**
+ * Blog Post Preview
+ * On the Blog page
+ */
+.previews__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 2em;
+  color: #fff;
+}
+.previews__container span {
+  font-family: "Inconsolata", monospace;
+}
+
+.preview {
+  transition: background-color 0.2s ease-in-out;
+}
+.preview:nth-child(even) {
+  background-color: #fff;
+}
+.preview:hover {
+  background-color: #f5f3ef;
+}
+.preview:hover .preview__more {
+  box-shadow: inset 175px 0 0 0 #9f8f68;
+  color: #fff;
+}
+.preview__img {
+  will-change: opacity;
+  -webkit-animation: fade-in 1s both;
+          animation: fade-in 1s both;
+}
+.preview__link {
+  display: block;
+  padding: 2em 1em;
+}
+@media (min-width: 54em) {
+  .preview__link {
+    padding: 4em 8em;
+  }
+}
+@media (min-width: 114em) {
+  .preview__link {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+}
+.preview__date {
+  font-family: "Space Mono", monospace;
+  color: #0a0a0a;
+}
+.preview__header {
+  color: #9f8f68;
+  margin-bottom: 0.5em;
+}
+.preview__excerpt {
+  color: #0a0a0a;
+}
+.preview__more {
+  display: inline-block;
+  padding: 0.5em;
+  font-family: "Space Mono", monospace;
+  color: #9f8f68;
+  border: 3px solid #9f8f68;
+  box-shadow: inset 0 0 0 0 #9f8f68;
+  transition: all 0.4s ease-in-out;
+}
+
+/**
+ * Category Card
+ * On the blog page under category tab
+ */
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  padding: 2em 1em;
+}
+.cards > * {
+  padding: 0.25em;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+@media (min-width: 54em) {
+  .cards > * {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+@media (min-width: 114em) {
+  .cards > * {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+}
+@media (min-width: 54em) {
+  .cards {
+    padding: 4em 2em;
+  }
+}
+
+.card__link {
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1), 0 1px 2px rgba(10, 10, 10, 0.2);
+  position: relative;
+  display: block;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+.card__link:after {
+  box-shadow: 0 3px 6px rgba(10, 10, 10, 0.1), 0 3px 6px rgba(10, 10, 10, 0.2);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 0.4s ease-in-out;
+}
+.card__link:hover {
+  background-color: #f5f3ef;
+}
+.card__link:hover:after {
+  opacity: 1;
+}
+.card__link:hover .card__more {
+  box-shadow: inset 175px 0 0 0 #9f8f68;
+  color: #fff;
+}
+.card__img {
+  position: relative;
+  height: 12em;
+  background-color: #0a0a0a;
+}
+.card__container {
+  padding: 2em 1em;
+}
+.card__header {
+  color: #9f8f68;
+}
+.card__count {
+  color: #0a0a0a;
+}
+.card__more {
+  display: inline-block;
+  padding: 0.25em;
+  font-family: "Space Mono", monospace;
+  color: #9f8f68;
+  border: 3px solid #9f8f68;
+  box-shadow: inset 0 0 0 0 #9f8f68;
+  transition: all 0.4s ease-in-out;
+}
+
+/**
+ * Footer
+ */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+@media (min-width: 30em) {
+  .footer {
+    flex-direction: row;
+  }
+}
+.footer__archive {
+  position: relative;
+  color: #0a0a0a;
+}
+.footer__archive:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 3px solid #9f8f68;
+  transition: width 0.4s ease-in-out;
+}
+.footer__archive:hover:after {
+  width: 100%;
+}
+.footer__social {
+  display: flex;
+  margin-top: 1em;
+}
+@media (min-width: 30em) {
+  .footer__social {
+    margin-top: 0;
+  }
+}
+.footer__social > *:not(:last-child) {
+  margin-right: 1em;
+}
+
+/**
+ * Animations
+ */
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  will-change: opacity;
+  -webkit-animation: fade-in 2s both;
+          animation: fade-in 2s both;
+}
+
+/**
+ * Absolute Background Cover
+ */
+.absolute-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+/**
+ * Color Helpers
+ */
+.bg-black {
+  background-color: #0a0a0a;
+}
+
+.bg-white {
+  background-color: #fff;
+}
 </style>
-<body class="w3-light-grey">
 
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+  <script>
+  window.console = window.console || function(t) {};
+</script>
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>WIRELESS POWER TRANSMISSION</b></h1>
-  <p>Welcome to the blog of <span class="w3-tag">Wireless Power Transmission.</span></p>
-</header>
-<div class="w3-section w3-bottombar w3-padding-16 w3-center">
-       
-      <a href="#"><button class="w3-button w3-black w3-hover-black">WPT</button></a>
-      <a href="types of wpt.html"><button class="w3-button w3-white w3-hover-black">Types of WPT</button></a>
-      <a href="emt in wpt.html"><button class="w3-button w3-white w3-hover-black">EMT in WPT</button></a>
-      <a href="rezence.html"><button class="w3-button w3-white w3-hover-black">Rezence</button></a>
-      <a href="challenges.html"><button class="w3-button w3-white w3-hover-black">Challenges in Wireless Power Transmission</button></a>
-      <a href="applications.html"><button class="w3-button w3-white w3-hover-black">Applications</button></a>
-      <a href="future.html"><button class="w3-button w3-white w3-hover-black">Future Scope</button></a>
-</div>
-<!-- Grid -->
-<div class="w3-row">
+  
+  
+</head>
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="Clips21-10-26-05-28.gif" alt="Nature" style="width:100%">
-    <div class="w3-container">
-      <h3><b>Introduction to WPT</b></h3>
-      
-    </div>
-
-    <div class="w3-container">
-      <p>Technology has come a long way in making human life easier. We live in a world of technological advancements where we see new technologies emerging every day just to make our lives easier and less complex, and we may not know to what extent our technological advances can guide us. Regardless, we still use the old classic and standard power transmission cabling system to charge our everyday Power devices. When it comes to charging multiple devices, the conventional wired system makes a mess, and some devices may have different charging ports. Despite all these, how about a single device that can charge these devices simultaneously without creating a mess. 
-</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="readmoreintro.html"><p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p></a>
-        </div>
+<body translate="no">
+  <main>
+  <section class="previews">
+    <div>
+      <figure class="absolute-bg preview__img" style="background-image: url('assets/darshan.jpg');"></figure>
+      <div class="previews__container">
+        <span>Welcome to the blog of</span>
+        <h1>GOVOYAGER</h1>
       </div>
     </div>
-  </div>
-  <hr>
 
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="theprestige.png" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>The Prestige</b></h3>
-      
+    <div>
+      <header>
+        <ul class="tabs">
+          <li class="tabs__item">Posts</li>
+          <li class="tabs__item">Categories</li>
+        </ul>
+      </header>
+      <div class="tab">
+        <ul itemscope itemtype="http://schema.org/Blog">    
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="dna.html" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2016-09-08T00:00:00-07:00">Oct 2, 2023</span>
+              <h2 class="preview__header" itemprop="name">Data storage in DNA</h2>
+              <p class="preview__excerpt" itemprop="description">The remarkable influence of modern technology touches every facet of our lives, providing ample opportunities for improvement. While recognizing potential drawbacks, it's essential to selectively harness these benefits to enhance our daily existence. From storing vast data in DNA to ......<p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
+        </li>
+      </ul>
+      <footer class="section-padding--sm footer">
+        <a class="footer__archive" href="#">Archive</a>
+        <ul class="footer__social">
+          <li><a class="fa fa-lg fa-envelope-o" href="/cdn-cgi/l/email-protection#6014080f0d01134e160105140820070d01090c4e030f0d"></a></li>
+          <li><a class="fa fa-lg fa-github" href="https://github.com/thomasvaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-linkedin" href="https://www.linkedin.com/in/thomasvaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-twitter" href="https://twitter.com/thomasvaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-facebook" href="https://www.facebook.com/thomas.vaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-instagram" href="https://www.instagram.com/thomas.vaeth/" target="_blank"></a></li> 
+        </ul>
+      </footer>
     </div>
 
-    <div class="w3-container">
-      <p>This movie is linked with our project in the way that in this movie sir Nicola tesla makes Tesla Coils which he used to transfer power through wireless mode.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="readmoreprestige.html"><p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p></a>
-        </div>
-      </div>
+    <div class="tab">
+      <ul class="cards">
+        <li class="card">
+          <a class="card__link" href="#">
+            <div class="card__img">
+              <figure class="absolute-bg" style="background-image: url('assets/dna.png');"></figure>
+            </div>
+            <div class="card__container">
+              <h2 class="card__header">STORAGE</h2>
+              <p class="card__count">1 Post</p>
+              <span class="card__more">View All</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <footer class="section-padding--sm footer">
+        <a class="footer__archive" href="#">Archive</a>
+        <ul class="footer__social">
+          <li><a class="fa fa-lg fa-envelope-o" href="/cdn-cgi/l/email-protection#e195898e8c8092cf9780849589a1868c80888dcf828e8c"></a></li>
+          <li><a class="fa fa-lg fa-github" href="https://github.com/thomasvaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-codepen" href="https://codepen.io/thomasvaeth/" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-linkedin" href="https://www.linkedin.com/in/thomasvaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-twitter" href="https://twitter.com/thomasvaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-facebook" href="https://www.facebook.com/thomas.vaeth" target="_blank"></a></li>
+          <li><a class="fa fa-lg fa-instagram" href="https://www.instagram.com/thomas.vaeth/" target="_blank"></a></li>  
+        </ul>
+      </footer>
     </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <!-- Posts -->
-<br>
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">  
-      <h4>Our team</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="darshan.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Darshan S</span><br>
-        <span>201EE118</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="rishee.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Rishee K</span><br>
-        <span>201EE244</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="ritik.jpeg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ritik Kumar Mehta</span><br>
-        <span>201EE145</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="sakshi.jpeg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Sakshi Chavan</span><br>
-        <span>201EE116</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="sudhaharan.jpeg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Sudhaharan S J</span><br>
-        <span>201EE159</span>
-      </li>   
-       
-       
-    </ul>
-  </div>
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Content</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <ul>
-      <li><a href="index.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-margin-bottom">Wireless Power Transmission</span></a></li> 
-      <li><a href="readmoretypes.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-small w3-margin-bottom">Types of Wireless Power Transmission</span></a></li> 
-      <li><a href="readmoreemt.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-small w3-margin-bottom">EMT in wireless power transmission</span></a></li> 
-      <li><a href="readmorerezence.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-small w3-margin-bottom">Rezence</span></a></li> 
-      <li><a href="readmorechallenges.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-small w3-margin-bottom">Challenges in Wireless Power Transmission</span></a></li> 
-      <li><a href="readmoreapplications.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-small w3-margin-bottom">Applications</span></a></li> 
-      <li><a href="readmorefuture.html" style="text-decoration:none"><span class="w3-tag w3-light-grey w3-hover-black w3-small w3-margin-bottom">Future Scope</span></a></li> 
-    </ul>
-    <br>
-    </div>
-  </div>
+  </section>
+</main>
   
-<!-- END Introduction Menu -->
-</div>
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id="rendered-js" >
+// Full blog theme demo and download available at http://thomasvaeth.com/trophy/
+var Tabs = function () {
+  var s;
 
-<!-- END GRID -->
-</div><br>
+  return {
+    settings: {
+      tabs: document.getElementsByClassName('tabs__item'),
+      tab: document.getElementsByClassName('tab') },
 
-<!-- END w3-content -->
-</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    init: function () {
+      s = this.settings;
+      this.display();
+      this.click();
+    },
+
+    display: function () {
+      if (s.tab.length) {
+        [].forEach.call(s.tab, function (tab) {
+          tab.style.display = 'none';
+        });
+        s.tab[0].style.display = 'block';
+        s.tab[0].classList.add('active');
+        s.tabs[0].classList.add('active');
+      }
+    },
+
+    click: function () {
+      if (s.tabs.length) {
+        var currentIdx = 0,
+        prevIdx = currentIdx;
+
+        [].forEach.call(s.tabs, function (tab, idx) {
+          tab.addEventListener('click', function () {
+            prevIdx = currentIdx;
+            currentIdx = idx;
+
+            if (prevIdx !== currentIdx) {
+              s.tab[prevIdx].style.display = 'none';
+              s.tab[prevIdx].classList.remove('active');
+              s.tabs[prevIdx].classList.remove('active');
+              s.tab[currentIdx].style.display = 'block';
+              s.tab[currentIdx].classList.add('active');
+              s.tabs[currentIdx].classList.add('active');
+            }
+          });
+        });
+      }
+    } };
+
+
+}();
+
+var Preview = function () {
+  var s;
+
+  return {
+    settings: {
+      img: document.getElementsByClassName('preview__img'),
+      post: document.getElementsByClassName('preview') },
+
+
+    init: function () {
+      s = this.settings;
+      this.display();
+      this.mouseenter();
+    },
+
+    display: function () {
+      if (s.img.length) {
+        [].forEach.call(s.img, function (img) {
+          img.style.display = 'none';
+        });
+        s.img[0].style.display = 'block';
+      }
+    },
+
+    mouseenter: function () {
+      if (s.post.length) {
+        var currentIdx = 0,
+        prevIdx = currentIdx;
+
+        [].forEach.call(s.post, function (preview, idx) {
+          preview.addEventListener('mouseenter', function () {
+            prevIdx = currentIdx;
+            currentIdx = idx;
+
+            if (prevIdx !== currentIdx) {
+              s.img[prevIdx].style.display = 'none';
+              s.img[currentIdx].style.display = 'block';
+            }
+          });
+        });
+      }
+    } };
+
+}();
+
+document.addEventListener('DOMContentLoaded', function () {
+  Tabs.init();
+  Preview.init();
+});
+//# sourceURL=pen.js
+    </script>
+
   
-  <a href="readmoreintro.html"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">Introduction »</button></a>
-  
-</footer>
-
 </body>
+
 </html>
