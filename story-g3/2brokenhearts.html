@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Storing Digital data in DNA</title>
+
+    <link rel="canonical" href="https://codepen.io/componentity/pen/ZEWvyLg">
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background-color: #0a0a0af1;
+}
+
+.code-container {
+
+  background-color: #ada07e;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-x: auto;
+}
+/* 
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  cursor: pointer;
+} */
+
+</style>
+
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+
+</head>
+
+<body translate="no">
+  <div class = "video-container">
+  <div style="max-width: 750px;" class="container my-5">
+    <div class="mx-auto text-secondary">
+      <img src="assets/g3.png" style="width: 750px;height: 420px;">
+      <div>
+          <small>
+            <a href="#" class="text-primary" >Fiction</a>, <a href="#" class="text-primary">Romance</a>,<a href="#" class="text-primary">Thriller </a>
+        </small>
+      </div>
+      <h1 class="font-weight-bold" style="color: #b09f74;">Broken Hearts</h1>
+      <p class="my-2" style="line-height: 2;color: #9f8f68;"></p>
+      
+      <div class="my-3 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+        <small class="ml-2">
+          <a href="#" class="text-primary d-block">Gayatri K</a>
+          <span>Oct 9, 2023</span>
+        </small>
+      </div>
+        <div class="text-primary">
+          <a href="https://www.linkedin.com/in/gayatrik1705/" class="w-6 mx-1">
+              <svg fill="currentColor" width="30px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                <path id="Shape" d="M7.3,0.9c1.5,-0.6 3.1,-0.9 4.7,-0.9c1.6,0 3.2,0.3 4.7,0.9c1.5,0.6 2.8,1.5
+                    3.8,2.6c1,1.1 1.9,2.3 2.6,3.8c0.7,1.5 0.9,3 0.9,4.7c0,1.7 -0.3,3.2
+                    -0.9,4.7c-0.6,1.5 -1.5,2.8 -2.6,3.8c-1.1,1 -2.3,1.9 -3.8,2.6c-1.5,0.7
+                    -3.1,0.9 -4.7,0.9c-1.6,0 -3.2,-0.3 -4.7,-0.9c-1.5,-0.6 -2.8,-1.5
+                    -3.8,-2.6c-1,-1.1 -1.9,-2.3 -2.6,-3.8c-0.7,-1.5 -0.9,-3.1 -0.9,-4.7c0,-1.6
+                    0.3,-3.2 0.9,-4.7c0.6,-1.5 1.5,-2.8 2.6,-3.8c1.1,-1 2.3,-1.9
+                    3.8,-2.6Zm-0.3,7.1c0.6,0 1.1,-0.2 1.5,-0.5c0.4,-0.3 0.5,-0.8 0.5,-1.3c0,-0.5
+                    -0.2,-0.9 -0.6,-1.2c-0.4,-0.3 -0.8,-0.5 -1.4,-0.5c-0.6,0 -1.1,0.2
+                    -1.4,0.5c-0.3,0.3 -0.6,0.7 -0.6,1.2c0,0.5 0.2,0.9 0.5,1.3c0.3,0.4 0.9,0.5
+                    1.5,0.5Zm1.5,10l0,-8.5l-3,0l0,8.5l3,0Zm11,0l0,-4.5c0,-1.4 -0.3,-2.5
+                    -0.9,-3.3c-0.6,-0.8 -1.5,-1.2 -2.6,-1.2c-0.6,0 -1.1,0.2 -1.5,0.5c-0.4,0.3
+                    -0.8,0.8 -0.9,1.3l-0.1,-1.3l-3,0l0.1,2l0,6.5l3,0l0,-4.5c0,-0.6 0.1,-1.1
+                    0.4,-1.5c0.3,-0.4 0.6,-0.5 1.1,-0.5c0.5,0 0.9,0.2 1.1,0.5c0.2,0.3 0.4,0.8
+                    0.4,1.5l0,4.5l2.9,0Z"></path>
+              </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div style="max-width: 700px; top: -80px;" class="mx-auto text-secondary">
+      <p class="my-2" style="line-height: 2;color: #9f8f68;">It was raining heavily that evening, looked like even the sky was mourning. 
+        I opened the rusty gate and made my way through the evergreen bushes. 
+        Only a few people, consisting mostly of neighbours were present. 
+        My eyes were searching for her in large backyard of their old house. 
+        That is when she came running from behind and hugged me tight. 
+        I could feel she shivering and sobbing, whilst holding my shirt. 
+        I put my arms around her. I don’t know any other way to comfort her.</p>
+      <br>
+      <p class="my-2" style="line-height: 2; color: #9f8f68;">It’s been 2 weeks since her sister’s funeral and she’s still in denial. 
+        I am trying my best to support her, she doesn’t have anyone except me in this world now. 
+        It breaks my heart to see really change from a cheerful young girl to person who rarely comes out of her room now. 
+        I still remember the first time I saw her. It was a local fair, where the villages display their handicrafts for people to but, 
+        and there she was standing at the pollen shawl table. She was there to help Catherine, her neighbour who weaves, these wooden shawls. 
+        Even in the hot summer afternoon, she looked fresh, she slightly pink cheeks, were shining against the bright sun. Her long brown hair tied back in ponytail which would sway with every nod of her head. The mesmerising smile which was attracting the customers, were magnetically pulling me towards her. It’s been 6 since that day and I have never seen Reily like this before. Honestly it scares me to see her in this condition. I snapped out of thoughts, alarm on my phone. SHIT, IT’S ALREADY 1 PM. I take lunch for Reily everyday, after her sisters death. She refuses to leave the home let alone cooking. 
+        I run down stairs, straight to the kitchen and start packing the already cooke lunch.</p>
+
+    </p><br>
+    <p class="my-2" style="line-height: 2; color: #9f8f68;">I am there at Reily’s old bungalow in just 5 min , 
+        I wake up to the front door and take out the extra pair of keys to unlock the door, 
+        knowing that she will be sleeping. I remove my shoes and slowly head to the dining table. 
+        To my surprise Reily is sitting one the couch staring at something outside the window. 
+        She notices me entering and gives me a slight smile.</p>
+        <br>
+    <p class="my-2" style="line-height: 2; color: #9f8f68;">I finish setting up the table and both of us eat quietly. None of us speak anything. 
+        I head over to the kitchen to wash the used dishes. 
+        Reily is standing at door watching me silently, that is when she comes in and hugs me from behind. 
+        She rests her head on my back. Thank you for everything Harry. 
+        Thank you for being so patient with me. I know I am troubling you…….I mean it very much</p>
+        
+        <br>
+        <p class="my-2" style="line-height: 2; color: #9f8f68;">I turn around to face her and see tears rolling down her cheeks. 
+          They look like precious pearls shining in light. I carefully lean in in to kiss her forehead, 
+          trying not to touch her with my soapy hands. It’s been 3 months now, 
+          life is slowly returning back to normal now. 
+          Reily has rejoined college and I started working at a nearby supermarket simultaneously 
+          I am looking for a proper job to support both of us. Yet things are very different from before. 
+          I’m concerned about reily. She blames herself for her sister’s death.</p>    
+          <br>
+    
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">Riya her sister, was severely allergic to peanuts, which became the reason for her death. It was a pleasant evening that day, me and Reily had gone to our usual spot to enjoy the sunset. It was a small hill overlooking the valley. It was a secured spot and infamously known as the suiide spot. Yeah, you guessed it right, the name itself is suggestive of its story. Reily put her phone in silent to peacefully enjoy the sunset together. That is when the tragedy hit.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">Both of us rushed home when we saw 7 missed calls from Rita. It was already too late by the time we reached there. The body showed signs of allergy. The effects of eating peanuts are breathlessness due to the inflammation of the throat. That is what she might have gone through in her sister’s and believes that Rita could have been saved if only she had seen her calls. Both the twin sisters were raised by their father. For the first time, misfortune hit them when their mother lost her life to a deadly disease when they were just 5 years old. They were raised very lovingly by their father. But to their bad luck, their father also left them when they were 18 years of age. They were left with nothing but this old ancestral home. Even though Reily is just 2 minutes older than her sister, she took the responsibility of caring for both of them. She used to work part time in a library along with her college. They were Basely to save enough money for college fees. But life had improved after I met her. I slowly started to pay Reily’s fees, which she would save up enough for Rita.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">Riya’s death was accident, but we could never figure out what exactly happened. We were careful enough to not have any peanuts at home. The neighbours had suggest for a post mortem, but all Reily wanted was her sister to rest in peace.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">5 months have passed now, everything is slowly coming back on track now, that is in our daily lives. Speaking of our relationship, Reily’s been very distant now. She is not still been able to overcome her guilt. The spark in our relationship is missing now. The mischief and naughtiness has disappeared forever, like a kid who’s grown up but just in one moment.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">Today we are going out for dinner after many months. Yet it feels like it’s been decades since we spent time together. I crave for her love and affection, the intimacy that we shared. I was waiting for her in my car, outside her bungalow . As usual she was running late, but this normally felt great. I lazily rested my head on the window of the car waiting for her. The door opened and there she was, dressed in simple yet elegant red frock paired with black heels. The long brown hair was resting on her shoulders and over her chest. She turned back to lock the door relieving the back visible through the deep cut of her dress. The subtle light was perfectly flaunting her fit body. She flipped her hair back from her shoulder and it fell like a curtain on her back. She must have caught me staring. Embarrassed I stared the engine and she came and sat on the front seat.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">I was fully prepared for today. This is a moment any guy is most excited and nervous about. Yes, I was planning to propose Reily today. I gently patted my coat to check for the ring, just the touch of the ring in my pocket bought a big smile on my face. The table was already reserved and the plan made. There was soft music playing in the background as we entered the restaurant. The manager greeted us with a smile signalled the way. It was a romantic evening and finally felt like I had Reily to myself today. We had a great time at the restaurant but I didn’t get a chance to ask her out.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">We finished the dinner and walked out hand tied together. The mission was still pending with the ring still in my pocket. We made our way. To the car and started driving back. That’s when the idea struck me, I ant find a better place than our secret spot. I gently held her hand, placed it over the gear while I changed it. She didn’t resist. Can we go to our secret spot? Remember how we used to spend hours going at the infinite sky? ’Hmm sure we can’ slowly in a muffled voice Reily replied. </p>
+          <br> <p class="my-2" style="line-height: 2; color: #9f8f68;">I quietly drove until we reached. The weather was pleasant with cool breeze gently caressing our face. Wow lay silently under the star. This is the perfect moment now. I sit upright and remove the box from my pocket. She follows, I opened the box to show her the ring. I look down at the diamond then raise my gaze to meet hers, point instead of smiles. I see her tears rolling down her eyes. No they are not due to happiness. </p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">‘No don’t do this to me ‘ is all she says again and again. </p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">Hey hey you can take your time. I won’t force you, but you do love me right, I asked her.</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">There is a silence with only the leaves resting in the background.</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">‘Reily you do love me right?’</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">‘Yes I do love you, but how can I be so selfish now. It’s been just months since Rita left us. How can I do this to her?’</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">Even she was alive, all she did was think about me, and now after her death, how can I forget everything.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">All the pent up angry suddenly hit me. The bottled up guilt, anger, the intense love and the raving. In this state of insanity I couldn’t control myself but smile. I smiled then it turned into a grim and I started laughing manically.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">‘No Reily I can’t be treated like this, I have loved you selflessly for 6 years, but all you did was compare me with your sister. You could never give my complete space in your heart, I had to always share the love with your sister. Whenever I try to talk to you, you start talking about your sisters. What did I do to deserve the 2nd place in your life.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">It was me who always stuck with during all your highs and lows, while she never cared about you. If not for me, you would have long dropped out of college to support your sister who didn’t even express gratitude. What did she ever do to deserve this love of yours ?</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">‘No it was never like that, i had always loved both of you equally’</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">A wide grin spread on my face,</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">‘But why was it that I got only half of the love?’ When I deserved it completely. That’s why I had to get rid of Riya.</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">Now after all the efforts don’t let your sisters death go waste, we can still lead a happy life, after all that’s what my darling deserves.</p>
+          <br><p class="my-2" style="line-height: 2; color: #9f8f68;">Reily was looking at me with her horror struck eyes. She fell to her knees and started crying. Slowly she got up and left without turning back. She unlocked the car door and started the engine.</p>
+          <p class="my-2" style="line-height: 2; color: #9f8f68;">Tires screeched in the background and there was a loud thump. The suicide spot had once again justified its name.	 </p>
+        
+          <br>      
+      <br>
+      
+      <div class="my-3">
+        <small>
+            <a href="#" class="text-primary">#fiction</a>, <a href="#" class="text-primary">#romantic</a>, <a href="#" class="text-primary">#mystery</a>, <a href="#" class="text-primary">#thriller</a>
+        </small>
+      </div>
+      
+    </div>
+  </div>
+  <footer class="mt-5 text-center" style="background-color: #333; color: #fff; padding: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="mb-4">Useful Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/your-username" class="text-primary">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/darshansenthilkumar/">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="mb-4">Contact</h4>
+          <p class="mb-2">Email: govoyager2021@gmail.com</p>
+          <p class="mb-2">Phone: +97 8072539357</p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="mb-4">Follow Me</h4>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fa-brands fa-facebook"></i>
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-primary"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</div>
+
+<script>
+  function binaryToDNA(binaryString) {
+            // Ensure the binary string length is a multiple of 2
+            if (binaryString.length % 2 !== 0) {
+                binaryString = "0" + binaryString;  // Pad with a leading 0 if needed
+            }
+
+            // Define a mapping from binary to DNA bases
+            const binaryToDNAMapping = {
+                "00": "A",
+                "01": "C",
+                "10": "G",
+                "11": "T"
+            };
+
+            let dnaSequence = "";
+
+            // Iterate through the binary string in chunks of 2
+            for (let i = 0; i < binaryString.length; i += 2) {
+                const chunk = binaryString.slice(i, i + 2);
+                const dnaBase = binaryToDNAMapping[chunk];
+                dnaSequence += dnaBase;
+            }
+
+            return dnaSequence;
+        }
+
+
+  document.getElementById("convertButton").addEventListener("click", function () {
+      const binaryInput = document.getElementById("binaryInput").value;
+      const dnaOutput = document.getElementById("dnaOutput");
+
+      // Call the binaryToDNA function and display the result
+      const dnaSequence = binaryToDNA(binaryInput);
+      dnaOutput.textContent = dnaSequence;
+  });
+
+
+  function copyCodeToClipboard() {
+            const codeContainer = document.querySelector('.code-container pre');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeContainer.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code copied to clipboard!');
+        }
+
+        // Attach click event listener to the copy button
+        document.getElementById('copyButton').addEventListener('click', copyCodeToClipboard);
+  
+</script>
+
+</body>
+
+</html>
